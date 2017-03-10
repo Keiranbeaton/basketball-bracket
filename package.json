@@ -1,0 +1,55 @@
+{
+  "name": "basketball-bracket",
+  "version": "1.0.0",
+  "description": "Creating a site so my friends and I can do a bracket challenge for the nba playoffs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keiranbeaton/basketball-bracket.git"
+  },
+  "author": "Keiran Beaton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keiranbeaton/basketball-bracket/issues"
+  },
+  "homepage": "https://github.com/Keiranbeaton/basketball-bracket#readme",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-jwt": "^0.1.9",
+    "angular-route": "^1.6.3",
+    "autoprefixer": "^6.7.6",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "cors": "^2.8.1",
+    "css-loader": "^0.26.4",
+    "debug": "^2.6.1",
+    "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "html-loader": "^0.4.5",
+    "http-errors": "^1.6.1",
+    "jquery": "^3.1.1",
+    "jsonwebtoken": "^7.3.0",
+    "mongoose": "^4.8.6",
+    "morgan": "^1.8.1",
+    "node-sass": "^4.5.0",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.17.1",
+    "mocha": "^3.2.0",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
