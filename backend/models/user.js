@@ -8,7 +8,9 @@ const createError = require('http-errors');
 
 let userSchema = mongoose.Schema({
   name: {type: String, required: true},
+  username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
+  role: {type: String, default: 'basic'},
   score: Number,
   bracket: {type: mongoose.Schema.Types.ObjectId, ref: 'Bracket'}
 });
@@ -18,7 +20,7 @@ userSchema.methods.generateHash = function(password) {
     bcrypt.hash(password, 8, (err, data) => {
       if (err) return reject(err);
       this.password = data;
-      resolve({token: jwt.sign({idd: this.name}, process.env.APP_SECRET)});
+      resolve({token: jwt.sign({idd: this.username}, process.env.APP_SECRET)});
     });
   });
 };
@@ -28,7 +30,7 @@ userSchema.methods.comparePassword = function(password) {
     bcrypt.compare(password, this.password, (err, data) => {
       if (err) return reject(err);
       if (data === false) return reject(new Error('Password did not match'));
-      resolve({token: jwt.sign({idd: this.name}, process.env.APP_SECRET)});
+      resolve({token: jwt.sign({idd: this.username}, process.env.APP_SECRET)});
     });
   });
 };
