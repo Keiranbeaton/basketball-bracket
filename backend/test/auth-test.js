@@ -68,16 +68,5 @@ describe('Auth testing', function() {
           done();
         });
     });
-
-    it('Authenticating without Token', function(done) {
-      chai.request(baseUrl)
-        .get('/jwtAuth')
-        .end((err, res) => {
-          expect(err).to.not.eql(null);
-          expect(err.message).to.eql('Internal Server Error');
-          expect(res.status).to.eql(500);
-          done();
-        });
-    });
   });
 });

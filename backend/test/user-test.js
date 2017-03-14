@@ -96,16 +96,4 @@ describe('User CRUD tests', function() {
         done();
       });
   });
-
-  it('testing DELETE bad id', function(done) {
-    chai.request(baseUrl)
-      .delete('/badid')
-      .end((err, res) => {
-        expect(err).to.not.eql(null);
-        expect(res.status).to.eql(404);
-        expect(res.text).to.eql('"User Id Not Found"');
-        expect(err.message).to.eql('Not Found');
-        done();
-      });
-  });
 });

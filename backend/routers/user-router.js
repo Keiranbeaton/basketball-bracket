@@ -29,9 +29,11 @@ userRouter.get('/:id', (req, res, next) => {
 userRouter.put('/:id', jsonParser, (req, res, next) => {
   debug('PUT /api/users/:id');
   if(Object.keys(req.body).length === 0) return next(createError(400, 'No data sent with request'));
-  console.log('req.params.id', req.params.id);
   User.findByIdAndUpdate(req.params.id, req.body, {new:true})
-  .then(user => res.send(user)).catch(next);
+    .then((user) => {
+      if (!user) return createError('404', 'User Id Not Found');
+      res.send(user);
+    }).catch(next);
 });
 
 userRouter.delete('/:id', (req, res, next) => {
@@ -40,7 +42,7 @@ userRouter.delete('/:id', (req, res, next) => {
   User.findByIdAndRemove(req.params.id)
     .then(user => {
       result = user;
-      Bracket.remove({userId: user._id});
+      Bracket.findOneAndRemove({'userId': user._id});
     })
     .then(() => {
       res.json(result);
