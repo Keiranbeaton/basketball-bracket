@@ -17,9 +17,9 @@ authRouter.post('/signup', jsonParser, (req, res, next) => {
   let newUser = new User();
   newUser.name = req.body.name;
   newUser.username = req.body.username;
-  newUser.password.role = 'basic';
+  newUser.role = 'basic';
   newUser.score = 0;
-  newUser.generateHas(req.body.password)
+  newUser.generateHash(req.body.password)
     .then((tokenData) => {
       newUser.save().then(() => {
         res.json(tokenData);

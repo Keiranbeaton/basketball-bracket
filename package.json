@@ -4,7 +4,7 @@
   "description": "Creating a site so my friends and I can do a bracket challenge for the nba playoffs",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "mocha ./backend/test/test-harness.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "babel-preset-es2015": "^6.22.0",
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
     "cors": "^2.8.1",
     "css-loader": "^0.26.4",
     "debug": "^2.6.1",

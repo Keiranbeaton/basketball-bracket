@@ -29,6 +29,7 @@ userRouter.get('/:id', (req, res, next) => {
 userRouter.put('/:id', jsonParser, (req, res, next) => {
   debug('PUT /api/users/:id');
   if(Object.keys(req.body).length === 0) return next(createError(400, 'No data sent with request'));
+  console.log('req.params.id', req.params.id);
   User.findByIdAndUpdate(req.params.id, req.body, {new:true})
   .then(user => res.send(user)).catch(next);
 });
