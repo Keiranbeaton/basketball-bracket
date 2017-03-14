@@ -24,14 +24,12 @@ describe('Auth testing', function() {
     before(function(done) {
       let user = new User({name: 'TestName2', username: 'TestUser2', password: 'AuthTest2', role: 'basic', score: 0});
       user.generateHash(user.password).then((token) => {
-        console.log('Got through user.generateHash');
         this.tokenData = token;
         user.save().then((userData) => {
-          console.log('Got through user.save');
           this.user = userData;
+          done();
         });
       });
-      done();
     });
 
     it('Authenticating Existing User', function(done) {

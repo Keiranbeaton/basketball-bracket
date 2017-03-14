@@ -31,9 +31,10 @@ userRouter.put('/:id', jsonParser, (req, res, next) => {
   if(Object.keys(req.body).length === 0) return next(createError(400, 'No data sent with request'));
   User.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then((user) => {
-      if (!user) return createError('404', 'User Id Not Found');
       res.send(user);
-    }).catch(next);
+    }).catch((err) => {
+      next(createError(404, 'User Id Not Found'));
+    });
 });
 
 userRouter.delete('/:id', (req, res, next) => {
