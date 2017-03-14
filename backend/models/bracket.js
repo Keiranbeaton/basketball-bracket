@@ -42,4 +42,4 @@ let bracketSchema = mongoose.Schema({
   finals: {winner: String, length: Number}
 });
 
-module.exports = exports = mongoose.Model('Bracket', bracketSchema);
+module.exports = exports = mongoose.model('Bracket', bracketSchema);
