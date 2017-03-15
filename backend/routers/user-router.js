@@ -32,7 +32,7 @@ userRouter.put('/:id', jsonParser, (req, res, next) => {
   User.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then((user) => {
       res.send(user);
-    }).catch((err) => {
+    }).catch(() => {
       next(createError(404, 'User Id Not Found'));
     });
 });

@@ -19,7 +19,7 @@ bracketRouter.post('/', jsonParser, (req, res, next) => {
         .then((bracket) => {
           res.json(bracket);
         }).catch(next);
-    }).catch(err => next(createError(400, 'User not found')));
+    }).catch(err => next(createError(400, err.message)));
 });
 
 bracketRouter.get('/', (req, res, next) => {
@@ -43,19 +43,15 @@ bracketRouter.put('/:id', jsonParser, (req, res, next) => {
   Bracket.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then((bracket) => {
       res.send(bracket);
-    }).catch(next);
+    }).catch((err) => {
+      next(createError(404, err.message));
+    });
 });
 
 bracketRouter.delete('/:id', (req, res, next) => {
   debug('DELETE /api/brackets/:id');
-  Bracket.findById(req.params.id)
+  Bracket.findByIdAndRemove(req.params.id)
     .then((bracket) => {
-      return User.findById(bracket.userId);
-    })
-    .then((user) => {
-      return user.removeEducationById(req.params.id);
-    })
-    .then((brackets) => {
-      res.json(brackets);
+      res.json(bracket);
     }).catch(next);
 });
