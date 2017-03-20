@@ -1,3 +1,45 @@
 <div id="edit-bracket-view">
+  <nav>
+    <ul>
+      <li><a href="#"> Home </a></li>
+      <li><a href="#"> All Brackets </a></li>
+      <li><a href="#"> Sign In </a></li>
+      <li><a href="#"> Sign Out </a></li>
+      <li><a href="#"> Sign Up </a></li>
+    </ul>
+  </nav>
+  <section>
+    <form class="edit-bracket" ng-submit="$ctrl.submitBracket()">
+      <ul class="edit-bracket-header">
+        <li> First Round </li>
+        <li> Conference Semis </li>
+        <li> Conference Finals </li>
+        <li> Finals </li>
+      </ul>
+      <div class="edit-bracket-west">
+        <ul class="edit-bracket-round">
+          <li class="edit-bracket-series">
+            <button type="button" name="button"></button>
+            <button type="button" name="button"></button>
+            <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.oneEight.length"></select>
+          </li>
+        </ul>
+        <ul class="edit-bracket-round">
+          <li class="edit-bracket-series">
+            <button type="button" name="button"></button>
+            <button type="button" name="button"></button>
+            <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.semis.seriesOne.length"></select>
+          </li>
+        </ul>
+      </div>
+      <div class="edit-bracket-east">
+        <ul>
 
+        </ul>
+      </div>
+    </form>
+  </section>
+  <div class="kb-footer">
+
+  </div>
 </div>
