@@ -5,9 +5,18 @@ module.exports = function(app) {
 
   function HomeController($log, $http, standings) {
     this.playoffPicture = {};
-    
+    this.users = [];
+
+    this.getUsers = function() {
+      $log.debug('HomeController.getUsers');
+      $http.get(this.baseUrl + '/users', this.config)
+        .then((res) => {
+          this.users = res;
+        });
+    };
+
     this.setStandings = function() {
-      $log.debug('HomeController.setTeams');
+      $log.debug('HomeController.getStandings');
       $http.get('stats.nba.com/stats/playoffpicture/?SeasonID=22016&LeagueID=00', this.config)
         .then((res) => {
           this.playoffPicture = {
@@ -32,7 +41,14 @@ module.exports = function(app) {
               eight: {name: res.resultSets[3].rowSet[7][2], wins: res.resultSets[2].rowSet[7][4], losses: res.resultSets[2].rowSet[7][5]}
             }
           };
+          standings.setStandings(this.playoffPicture);
         });
     };
+
+    this.onPageLoad = function() {
+      this.getStandings();
+      this.getUsers();
+    };
+
   }
 };

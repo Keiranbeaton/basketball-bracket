@@ -3,6 +3,7 @@
     <ul>
       <li><a href="#"> Home </a></li>
       <li><a href="#"> All Brackets </a></li>
+      <li><a href="#"> My Bracket </a></li>
       <li><a href="#"> Sign In </a></li>
       <li><a href="#"> Sign Out </a></li>
       <li><a href="#"> Sign Up </a></li>
@@ -15,28 +16,101 @@
         <li> Conference Semis </li>
         <li> Conference Finals </li>
         <li> Finals </li>
+        <li> Conference Finals </li>
+        <li> Conference Semis </li>
+        <li> First Round </li>
       </ul>
-      <div class="edit-bracket-west">
-        <ul class="edit-bracket-round">
-          <li class="edit-bracket-series">
-            <button type="button" name="button"></button>
-            <button type="button" name="button"></button>
-            <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.oneEight.length"></select>
-          </li>
-        </ul>
-        <ul class="edit-bracket-round">
-          <li class="edit-bracket-series">
-            <button type="button" name="button"></button>
-            <button type="button" name="button"></button>
-            <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.semis.seriesOne.length"></select>
-          </li>
-        </ul>
-      </div>
-      <div class="edit-bracket-east">
-        <ul>
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" name="" ng-model="$ctrl.playoffPicture.west.one.name">
+          <input type="button" name="button" ng-model="$ctrl.playoffPicture.west.eight.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.oneEight.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.four.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.five.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.fourFive.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.three.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.six.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.threeSix.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button"  ng-model="$ctrl.playoffPicture.west.two.name">
+          <input type="button"  ng-model="$ctrl.playoffPicture.west.seven.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.twoSeven.length"></select>
+        </li>
+      </ul>
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.one.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.eight.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.firstRound.oneEight.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.four.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.five.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.firstRound.fourFive.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.three.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.six.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.firstRound.threeSix.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button"  ng-model="$ctrl.playoffPicture.east.two.name">
+          <input type="button"  ng-model="$ctrl.playoffPicture.east.seven.name">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.firstRound.twoSeven.length"></select>
+        </li>
+      </ul>
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.west.firstRound.oneEight.winner">
+          <input type="button" ng-model="$ctrl.bracket.west.firstRound.fourFive.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.semis.seriesOne.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.west.firstRound.threeSix.winner">
+          <input type="button" ng-model="$ctrl.bracket.west.firstRound.twoSeven.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.semis.seriesTwo.length"></select>
+        </li>
+      </ul>
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.east.firstRound.oneEight.winner">
+          <input type="button" ng-model="$ctrl.bracket.east.firstRound.fourFive.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.semis.seriesOne.length"></select>
+        </li>
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.east.firstRound.threeSix.winner">
+          <input type="button" ng-model="$ctrl.bracket.east.firstRound.twoSeven.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.semis.seriesTwo.length"></select>
+        </li>
+      </ul>
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.west.semis.seriesOne.winner">
+          <input type="button" ng-model="$ctrl.bracket.west.semis.seriesTwo.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.finals.length"></select>
+        </li>
+      </ul>
+      <ul>
 
-        </ul>
-      </div>
+      </ul>
     </form>
   </section>
   <div class="kb-footer">
