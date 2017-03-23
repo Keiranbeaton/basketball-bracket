@@ -5,6 +5,7 @@ module.exports = function(app) {
     return {
       playoffPicture: {},
       setStandings: function(obj) {
+        $log.debug('standings.setStandings');
         this.playoffPicture = obj;
       }
     };

@@ -1,31 +1,19 @@
-<div id="bracket-view">
+<div id="bracket-view" ng-init="$ctrl.onPageLoad()">
   <nav>
     <ul>
-      <li><a href="#"> Home </a></li>
-      <li><a href="#"> All Brackets </a></li>
-      <li><a href="#"> My Bracket </a></li>
-      <li><a href="#"> Sign In </a></li>
-      <li><a href="#"> Sign Out </a></li>
-      <li><a href="#"> Sign Up </a></li>
+      <li><a href="#/home"> Home </a></li>
+      <li><a href="#/brackets"> All Brackets </a></li>
+      <li ng-hide="!$ctrl.signedIn"><a ng-href="#/brackets/{{$ctrl.currentUser._id}}"> My Bracket </a></li>
+      <li ng-hide="$ctrl.signedIn"><a href="#/sign-in"> Sign In </a></li>
+      <li ng-hide="!$ctrl.signedIn"><a href="#/sign-out"> Sign Out </a></li>
+      <li ng-hide="$ctrl.signedIn"><a href="#/sign-up"> Sign Up </a></li>
     </ul>
   </nav>
   <section>
+    <h2> Brackets </h2>
     <ul>
       <li ng-repeat="user in $ctrl.allUsers">
-        <ul>
-          <li> First Round </li>
-          <li> Conference Semis </li>
-          <li> Conference Finals </li>
-          <li> Finals </li>
-        </ul>
-        <ul>
-          <li>
-
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <kb-single-bracket user="user"></kb-single-bracket>
       </li>
     </ul>
   </section>

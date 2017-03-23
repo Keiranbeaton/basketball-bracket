@@ -5,8 +5,7 @@ module.exports = (app) => {
     controller: 'SingleBracketController',
     template: require('./single-bracket-template.html'),
     bindings: {
-      name: '<',
-      bracket: '<'
+      user: '<'
     }
   });
 };

@@ -1,26 +1,45 @@
 <div class="single-bracket">
+  <h3>{{$ctrl.user.name}}'s Bracket</h3>
+  <ul class="bracket-header">
+    <li> First Round </li>
+    <li> Conference Semis </li>
+    <li> Conference Finals </li>
+    <li> Finals </li>
+    <li> Conference Finals </li>
+    <li> Conference Semis </li>
+    <li> First Round </li>
+  </ul>
   <ul>
-    <li>
-      <ul>
-        <li> First Round </li>
-        <li> Conference Semis </li>
-        <li> Conference Finals </li>
-        <li> Finals </li>
-        <li> Conference Finals </li>
-        <li> Conference Semis </li>
-        <li> First Round </li>
-      </ul>
+    <li class="kb-round first-round">
+      <kb-series teamOne="$ctrl.playoffPicture.west.one.name" teamTwo="$ctrl.playoffPicture.west.eight.name" length="$ctrl.user.bracket.west.firstRound.oneEight.length"></kb-series>
+      <kb-series teamOne="$ctrl.playoffPicture.west.four.name" teamTwo="$ctrl.playoffPicture.west.five.name" length="$ctrl.user.bracket.west.firstRound.fourFive.length"></kb-series>
+      <kb-series teamOne="$ctrl.playoffPicture.west.three.name" teamTwo="$ctrl.playoffPicture.west.six.name" length="$ctrl.user.bracket.west.firstRound.threeSix.length"></kb-series>
+      <kb-series teamOne="$ctrl.playoffPicture.west.two.name" teamTwo="$ctrl.playoffPicture.west.seven.name" length="$ctrl.user.bracket.west.firstRound.twoseven.length"></kb-series>
     </li>
-    <li class="bracket-round">
-      <p>  </p>
-      <p>  </p>
-      <p>  </p>
+    <li class="kb-round second-round">
+      <kb-series teamOne="$ctrl.user.bracket.west.firstRound.oneEight.winner" teamTwo="$ctrl.user.bracket.west.firstRound.fourFive.winner" length="$ctrl.user.bracket.west.semis.seriesOne.length"></kb-series>
+      <kb-series teamOne="$ctrl.user.bracket.west.firstRound.threeSix.winner" teamTwo="$ctrl.user.bracket.west.firstRound.twoSeven.winner" length="$ctrl.user.bracket.west.semis.seriesTwo.length"></kb-series>
     </li>
-    <li class="bracket-round"></li>
-    <li class="bracket-round"></li>
-    <li class="bracket-round"></li>
-    <li class="bracket-round"></li>
-    <li class="bracket-round"></li>
-    <li class="bracket-round"></li>
-    </ul>
+    <li class="kb-round third-round">
+      <kb-series teamOne="$ctrl.user.bracket.west.semis.seriesOne.winner" teamTwo="$ctrl.user.bracket.west.semis.seriesTwo.winner" length="$ctrl.user.bracket.west.finals.length"></kb-series>
+    </li>
+    <li class="kb-round fourth-round">
+      <h4> Champion: </h4>
+      <h5> {{$ctrl.user.bracket.finals.winner}} </h5>
+      <kb-series teamOne="$ctrl.user.bracket.west.finals.winner" teamTwo="$ctrl.user.bracket.east.finals.winner" length="$ctrl.user.bracket.finals.length"></kb-series>
+    </li>
+    <li class="kb-round third-round">
+      <kb-series teamOne="$ctrl.user.bracket.east.semis.seriesOne.winner" teamTwo="$ctrl.user.bracket.east.semis.seriesTwo.winner" length="$ctrl.user.bracket.east.finals.length"></kb-series>
+    </li>
+    <li class="kb-round second-round">
+      <kb-series teamOne="$ctrl.user.bracket.east.firstRound.oneEight.winner" teamTwo="$ctrl.user.bracket.east.firstRound.fourFive.winner" length="$ctrl.user.bracket.east.semis.seriesOne.length"></kb-series>
+      <kb-series teamOne="$ctrl.user.bracket.east.firstRound.threeSix.winner" teamTwo="$ctrl.user.bracket.east.firstRound.twoSeven.winner" length="$ctrl.user.bracket.east.semis.seriesTwo.length"></kb-series>
+    </li>
+    <li class="kb-round first-round">
+      <kb-series teamOne="$ctrl.playoffPicture.east.one.name" teamTwo="$ctrl.playoffPicture.east.eight.name" length="$ctrl.user.bracket.east.firstRound.oneEight.length"></kb-series>
+      <kb-series teamOne="$ctrl.playoffPicture.east.four.name" teamTwo="$ctrl.playoffPicture.east.five.name" length="$ctrl.user.bracket.east.firstRound.fourFive.length"></kb-series>
+      <kb-series teamOne="$ctrl.playoffPicture.east.three.name" teamTwo="$ctrl.playoffPicture.east.six.name" length="$ctrl.user.bracket.east.firstRound.threeSix.length"></kb-series>
+      <kb-series teamOne="$ctrl.playoffPicute.east.two.name" teamTwo="$ctrl.playoffPicture.east.seven.name" length="$ctrl.user.bracket.east.firstRound.twoSeven.length"></kb-series>
+    </li>
+  </ul>
 </div>

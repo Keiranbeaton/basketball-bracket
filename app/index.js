@@ -31,13 +31,16 @@ bracketApp.config(['$routeProvider', '$locationProvider', ($rp, $lp) => {
   .when('/brackets', {
     template: require('./html/bracket.html')
   })
-  .when('/signup', {
+  .when('/brackets/:id', {
+    template: require('./html/edit-bracket.html')
+  })
+  .when('/sign-up', {
     template: require('./html/signup.html')
   })
-  .when('/signin', {
+  .when('/sign-in', {
     template: require('./html/signin.html')
   })
-  .when('/signout', {
+  .when('/sign-out', {
     template: require('./html/signout.html')
   })
   .otherwise({

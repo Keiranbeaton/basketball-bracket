@@ -1,12 +1,12 @@
-<div id="edit-bracket-view">
+<div id="edit-bracket-view" ng-init="$ctrl.onPageLoad()">
   <nav>
     <ul>
-      <li><a href="#"> Home </a></li>
-      <li><a href="#"> All Brackets </a></li>
-      <li><a href="#"> My Bracket </a></li>
-      <li><a href="#"> Sign In </a></li>
-      <li><a href="#"> Sign Out </a></li>
-      <li><a href="#"> Sign Up </a></li>
+      <li><a href="#/home"> Home </a></li>
+      <li><a href="#/brackets"> All Brackets </a></li>
+      <li ng-hide="!$ctrl.signedIn"><a ng-href="#/brackets/{{$ctrl.currentUser._id}}"> My Bracket </a></li>
+      <li ng-hide="$ctrl.signedIn"><a href="#/sign-in"> Sign In </a></li>
+      <li ng-hide="!$ctrl.signedIn"><a href="#/sign-out"> Sign Out </a></li>
+      <li ng-hide="$ctrl.signedIn"><a href="#/sign-up"> Sign Up </a></li>
     </ul>
   </nav>
   <section>
@@ -22,40 +22,40 @@
       </ul>
       <ul class="edit-bracket-round">
         <li class="edit-bracket-series">
-          <input type="button" name="" ng-model="$ctrl.playoffPicture.west.one.name">
-          <input type="button" name="button" ng-model="$ctrl.playoffPicture.west.eight.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.one.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.one.name, $ctrl.bracket.west.firstRound.oneEight.winner)">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.eight.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.eight.name, $ctrl.bracket.west.firstRound.oneEight.winner)">
           <p> in </p>
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.oneEight.length"></select>
         </li>
         <li class="edit-bracket-series">
-          <input type="button" ng-model="$ctrl.playoffPicture.west.four.name">
-          <input type="button" ng-model="$ctrl.playoffPicture.west.five.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.four.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.four.name, $ctrl.bracket.west.firstRound.fourFive.winner)">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.five.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.five.name, $ctrl.bracket.west.firstRound.fourFive.winner)">
           <p> in </p>
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.fourFive.length"></select>
         </li>
         <li class="edit-bracket-series">
-          <input type="button" ng-model="$ctrl.playoffPicture.west.three.name">
-          <input type="button" ng-model="$ctrl.playoffPicture.west.six.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.three.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.three.name, $ctrl.bracket.west.firstRound.threeSix.winner)">
+          <input type="button" ng-model="$ctrl.playoffPicture.west.six.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.six.name, $ctrl.bracket.west.firstRound.threeSix.winner)">
           <p> in </p>
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.threeSix.length"></select>
         </li>
         <li class="edit-bracket-series">
-          <input type="button"  ng-model="$ctrl.playoffPicture.west.two.name">
-          <input type="button"  ng-model="$ctrl.playoffPicture.west.seven.name">
+          <input type="button"  ng-model="$ctrl.playoffPicture.west.two.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.two.name, $ctrl.bracket.west.firstRound.twoSeven.winner)">
+          <input type="button"  ng-model="$ctrl.playoffPicture.west.seven.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.west.seven.name, $ctrl.bracket.west.firstRound.twoSeven.winner)">
           <p> in </p>
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.firstRound.twoSeven.length"></select>
         </li>
       </ul>
       <ul class="edit-bracket-round">
         <li class="edit-bracket-series">
-          <input type="button" ng-model="$ctrl.playoffPicture.east.one.name">
-          <input type="button" ng-model="$ctrl.playoffPicture.east.eight.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.one.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.east.one.name, $ctrl.bracket.east.firstRound.oneEight.winner)">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.eight.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.east.eight.name, $ctrl.bracket.east.firstRound.oneEight.winner)">
           <p> in </p>
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.firstRound.oneEight.length"></select>
         </li>
         <li class="edit-bracket-series">
-          <input type="button" ng-model="$ctrl.playoffPicture.east.four.name">
-          <input type="button" ng-model="$ctrl.playoffPicture.east.five.name">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.four.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.east.four.name, $ctrl.bracket.east.firstRound.fourFive.winner)">
+          <input type="button" ng-model="$ctrl.playoffPicture.east.five.name" ng-click="$ctrl.chooseWinner($ctrl.playoffPicture.east.five.name, $ctrl.bracket.east.firstRound.oneEight.winner)">
           <p> in </p>
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.firstRound.fourFive.length"></select>
         </li>
@@ -108,8 +108,21 @@
           <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.west.finals.length"></select>
         </li>
       </ul>
-      <ul>
-
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.east.semis.seriesOne.winner">
+          <input type="button" ng-model="$ctrl.bracket.east.semis.seriesTwo.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.east.finals.length"></select>
+        </li>
+      </ul>
+      <ul class="edit-bracket-round">
+        <li class="edit-bracket-series">
+          <input type="button" ng-model="$ctrl.bracket.west.finals.winner">
+          <input type="button" ng-model="$ctrl.bracket.east.finals.winner">
+          <p> in </p>
+          <select ng-options="length as length.label for length in $ctrl.seriesLength track by length.value" ng-model="$ctrl.bracket.finals.length"></select>
+        </li>
       </ul>
     </form>
   </section>
