@@ -5,9 +5,10 @@ module.exports = (app) => {
     controller: 'SeriesController',
     template: require('./series-template.html'),
     bindings: {
-      topTeam: '<',
-      bottomTeam: '<',
-      length: '<'
+      teamOne: '<',
+      teamTwo: '<',
+      length: '<',
+      winner: '<'
     }
   });
 };

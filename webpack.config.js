@@ -10,6 +10,11 @@ var plugins = [
   new ExtractText('bundle.css'),
   new webpack.DefinePlugin({
     __API_URL__: API_URL,
+  }),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      postcss: [autoprefixer]
+    }
   })
 ];
 
@@ -20,49 +25,51 @@ module.exports = {
     path: 'build',
     filename: 'bundle.js'
   },
-  sassLoader: {
-    includePaths: [`${__dirname}/app/scss/lib`],
-  },
-  postcss: function(){
-    return [autoprefixer];
-  },
   module:{
-    loaders:[
+    rules: [
       {
         test: /\.scss$/,
-        loader: ExtractText.extract('style', 'css!postcss!sass!'),
+        use: ExtractText.extract({fallback:'style-loader', use: ['css-loader', 'sass-loader']})
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015'],
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015']
+            }
+          }
+        ],
+        exclude: /node_modules/
       },
       {
         test: /\.html$/,
-        loader: 'html',
+        loader: 'html-loader'
       },
       {
         test: /\.(jpg|gif|png)$/,
-        loader: 'file?name=img/[hash].[ext]'
+        loader: 'file-loader?name=img/[hash].[ext]'
       },
       {
-        test: /\.svg/,
-        loader:'url?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]',
+        test: /\.ico/,
+        loader: 'static-loader'
+      },
+      {
+        test:/\.svg/,
+        loader: 'url-loader?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]'
       },
       {
         test: /\.woff/,
-        loader: 'file?name=fonts/[name].[ext]',
+        loader: 'file-loader?name=fonts/[name].[ext]'
       },
       {
         test: /\.[ot]tf/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream&name=fonts/[name].[ext]'
+        loader: 'url-loader?limit=10000mimetype=application/octet-stream&name=fonts/[name].[ext]'
       },
       {
         test: /\.eot/,
-        loader:'url?limit=10000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]'
+        loader: 'url-loader?limit=10000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]'
       }
     ]
   }

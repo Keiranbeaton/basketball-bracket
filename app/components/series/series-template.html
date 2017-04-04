@@ -1,9 +1,10 @@
 <article class="kb-series">
-  <div class="kb-teams">
-    <p> {{$ctrl.topTeam}} </p>
-    <p> {{$ctrl.bottomTeam}} </p>
+  <div class="team top">
+    <p ng-class="$ctrl.teamOneClass">{{$ctrl.teamOne}}</p>
+    <p>{{$ctrl.teamOneWins}}</p>
   </div>
-  <div class="kb-length">
-    <p> in {{$ctrl.length}} </p>
+  <div class="team bottom">
+    <p ng-class="$ctrl.teamTwoClass">{{$ctrl.teamTwo}}</p>
+    <p>{{$ctrl.teamTwoWins}}</p>
   </div>
 </article>
