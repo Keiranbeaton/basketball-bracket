@@ -9,26 +9,43 @@ const angularJwt = require('angular-jwt');
 const bracketApp = angular.module('bracketApp', [angularRoute, angularJwt]);
 
 bracketApp.run(['$rootScope', ($rs) => {
+  $rs.master = {
+    one: {winner: 'TBD', length: 'NA'},
+    two: {winner: 'TBD', length: 'NA'},
+    three: {winner: 'TBD', length: 'NA'},
+    four: {winner: 'TBD', length: 'NA'},
+    five: {winner: 'TBD', length: 'NA'},
+    six: {winner: 'TBD', length: 'NA'},
+    seven: {winner: 'TBD', length: 'NA'},
+    eight: {winner: 'TBD', length: 'NA'},
+    nine: {winner: 'TBD', length: 'NA'},
+    ten: {winner: 'TBD', length: 'NA'},
+    eleven: {winner: 'TBD', length: 'NA'},
+    twelve: {winner: 'TBD', length: 'NA'},
+    thirteen: {winner: 'TBD', length: 'NA'},
+    fourteen: {winner: 'TBD', length: 'NA'},
+    fifteen: {winner: 'TBD', length: 'NA'}
+  };
   $rs.teams = {
     east: {
-      one: {name: 'BOS', wins: 50, losses: 27},
-      two: {name: 'CLE', wins: 49, losses: 27},
-      three: {name: 'TOR', wins: 47, losses: 30},
-      four: {name: 'WAS', wins: 46, losses: 31},
-      five: {name: 'MIL', wins: 40, losses: 37},
-      six: {name: 'ATL', wins: 39, losses: 38},
-      seven: {name: 'CHI', wins: 38, losses: 39},
-      eight: {name: 'MIA', wins: 37, losses: 40}
+      one: {name: 'CLE', wins: 51, losses: 29},
+      two: {name: 'BOS', wins: 51, losses: 29},
+      three: {name: 'TOR', wins: 50, losses: 31},
+      four: {name: 'WAS', wins: 48, losses: 32},
+      five: {name: 'ATL', wins: 42, losses: 38},
+      six: {name: 'MIL', wins: 41, losses: 39},
+      seven: {name: 'IND', wins: 40, losses: 40},
+      eight: {name: 'CHI', wins: 39, losses: 41}
     },
     west: {
-      one: {name: 'GSW', wins: 63, losses: 14},
-      two: {name: 'SAS', wins: 59, losses: 17},
-      three: {name: 'HOU', wins: 52, losses: 25},
-      four: {name: 'UTA', wins: 47, losses: 30},
-      five: {name: 'LAC', wins: 47, losses: 31},
-      six: {name: 'OKC', wins: 43, losses: 33},
-      seven: {name: 'MEM', wins: 42, losses: 35},
-      eight: {name: 'POR', wins: 38, losses: 39}
+      one: {name: 'GSW', wins: 66, losses: 14},
+      two: {name: 'SAS', wins: 61, losses: 19},
+      three: {name: 'HOU', wins: 54, losses: 26},
+      four: {name: 'LAC', wins: 49, losses: 31},
+      five: {name: 'UTA', wins: 49, losses: 31},
+      six: {name: 'OKC', wins: 46, losses: 34},
+      seven: {name: 'MEM', wins: 43, losses: 38},
+      eight: {name: 'POR', wins: 40, losses: 40}
     }
   };
   $rs.baseUrl = `${__API_URL__}/api`;
@@ -51,7 +68,7 @@ bracketApp.config(['$routeProvider', '$locationProvider', ($rp, $lp) => {
     template: require('./html/home.html')
   })
   .when('/brackets', {
-    template: require('./html/bracket.html')
+    template: require('./html/brackets.html')
   })
   .when('/brackets/:id', {
     template: require('./html/edit-bracket.html')

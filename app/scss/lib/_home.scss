@@ -1,0 +1,51 @@
+#home-view {
+  width: $kb-container-width;
+  section {
+    width: $kb-inner-container-width;
+    article {
+      width: $kb-container-width;
+    }
+    article.scoring-info {
+      h2 {
+        width: $kb-container-width;
+        text-align: center;
+      }
+      p {
+        text-align: left;
+      }
+    }
+    div.home-bracket {
+      width: 90%;
+      h3 {
+        width: 100%;
+        text-align: center;
+      }
+      ul {
+        width: 100%;
+        white-space: nowrap;
+        font-size: 0;
+        li.kb-round {
+          display: inline-block;
+          font-size: 12px;
+          width: 14.28%;
+          vertical-align: middle;
+          div.home-series {
+            padding-left: 10px;
+            display: block;
+            border-style: solid;
+            border-width: thin;
+            border-color: $kb-color2;
+            div.team {
+              display: block;
+              p {
+                display: inline-block;
+                width: 50%;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

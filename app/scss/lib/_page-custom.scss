@@ -1,0 +1,17 @@
+html, body {
+  height: $kb-container-width;
+  width: $kb-container-width;
+  margin: 0px 0px -50px 0px;
+  background-color: $kb-color1;
+  color: $kb-text1;
+}
+
+a {
+  color: $kb-text1;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 0;
+}

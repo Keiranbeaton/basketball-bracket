@@ -22,7 +22,7 @@ module.exports = {
   entry: `${__dirname}/app`,
   plugins: plugins,
   output: {
-    path: 'build',
+    path: `${__dirname}/build`,
     filename: 'bundle.js'
   },
   module:{

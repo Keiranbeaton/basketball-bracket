@@ -1,0 +1,33 @@
+.kb-header {
+  div.header-title {
+    width: 100%;
+    text-align: center;
+    h1 {
+      text-align: center;
+    }
+  }
+  ul {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 0;
+    li {
+      text-align: center;
+      display: inline-block;
+      width: 18%;
+      margin-left: 3%;
+      margin-right: 3%;
+      a {
+        font-size: 12px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.kb-footer {
+  height: 50px;
+  width: $kb-container-width;
+  background-color: $kb-color2;
+}

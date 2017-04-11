@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     this.getCurrentUser = function() {
       $log.debug('BracketController.getCurrentuser');
-      if(auth.currentUser.hasOwnProperty('userId') && auth.currenUser.userId.length > 1) {
+      if(auth.currentUser.hasOwnProperty('userId') && auth.currentUser.userId.length > 1) {
         $http.get(this.baseUrl + '/users/' + auth.currentUser.userId, this.config)
           .then((res) => {
             this.signedIn = true;
