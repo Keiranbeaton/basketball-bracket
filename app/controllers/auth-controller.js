@@ -4,6 +4,7 @@ module.exports = function(app) {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', '$log', function($http, $location, $window, auth, $log) {
     this.wrongPassword = false;
     this.confirmPassword = true;
+    this.currentUser = auth.currentUser;
 
     this.signup = function(user) {
       $log.debug('AuthController.signup');

@@ -1,5 +1,8 @@
 <div id="edit-bracket-view" ng-init="$ctrl.onPageLoad()">
-  <nav>
+  <nav class="kb-header">
+    <div class="header-title">
+      <h1>2nd Annual Arian Ghavidel Memorial Bracket Challenge</h1>
+    </div>
     <ul>
       <li><a href="#/home"> Home </a></li>
       <li><a href="#/brackets"> All Brackets </a></li>
@@ -10,7 +13,8 @@
     </ul>
   </nav>
   <section>
-    <p> Make Sure You Save Your Bracket </p>
+    <div class="edit-bracket-form">
+      <h3> Make Sure You Save Your Bracket </h3>
       <ul class="edit-bracket-header">
         <li> First Round </li>
         <li> Conference Semis </li>
@@ -20,56 +24,70 @@
         <li> Conference Semis </li>
         <li> First Round </li>
       </ul>
+      <div class="kb-line"></div>
       <ul>
         <li class="kb-round first-round">
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesOneClass">
-              <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.west.one.name, $ctrl.bracket.seriesOne.winner, $ctrl.seriesOneClass, $ctrl.topChosen)">{{$ctrl.west.one.name}}</div>
+              <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.west.one.name, $ctrl.bracket.seriesOne.winner, $ctrl.seriesOneClass, $ctrl.topChosen)">
+                {{$ctrl.west.one.name}}
+              </div>
               <div class="team bottom" ng-class="$ctrl.seriesTwoClass" ng-click="$ctrl.chooseWinner($ctrl.west.eight.name, $ctrl.bracket.seriesOne.winner, $ctrl.seriesOneClass, $ctrl.bottomChosen)">{{$ctrl.west.eight.name}}</div>
             </div>
-            <p>in</p>
-            <select ng-model="$ctrl.seriesOne.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesTwoClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.west.four.name, $ctrl.bracket.seriesTwo.winner, $ctrl.seriesTwoClass, $ctrl.topChosen)">{{$ctrl.west.four.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.west.five.name, $ctrl.bracket.seriesTwo.winner, $ctrl.seriesTwoClass, $ctrl.bottomChosen)">{{$ctrl.west.five.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesTwo.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesThreeClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.west.three.name, $ctrl.bracket.seriesThree.winner, $ctrl.seriesThreeClass, $ctrl.topChosen)">{{$ctrl.west.three.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.west.six.name, $ctrl.bracket.seriesThree.winner, $ctrl.seriesThreeClass, $ctrl.bottomChosen)">{{$ctrl.west.six.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesThree.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesFourClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.west.two.name, $ctrl.bracket.seriesFour.winner, $ctrl.seriesFourClass, $ctrl.topChosen)">{{$ctrl.west.two.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.west.seven.name, $ctrl.bracket.seriesFour.winner, $ctrl.seriesFourClass, $ctrl.bottomChosen)">{{$ctrl.west.seven.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesFour.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
         <li class="kb-round second-round">
@@ -78,24 +96,30 @@
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesOneWinner, $ctrl.bracket.seriesNine.winner, $ctrl.seriesNineClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesOne.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesTwo.winner, $ctrl.bracket.seriesNine.winner, $ctrl.seriesNineClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesTwo.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesNine.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesTenClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesThree.winner, $ctrl.bracket.seriesTen.winner, $ctrl.seriesTenClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesThree.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesFour.winner, $ctrl.bracket.seriesTen.winner, $ctrl.seriesTenClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesFour.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesTen.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
         <li class="kb-round third-round">
@@ -104,12 +128,15 @@
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesNine.winner, $ctrl.bracket.seriesThirteen.winner, $ctrl.seriesThirteenClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesNine.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesTen.winner, $ctrl.bracket.seriesThirteen.winner, $ctrl.seriesThirteenClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesTen.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesThirteen.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
         <li class="kb-round fourth-round">
@@ -118,12 +145,15 @@
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesThirteen.winner, $ctrl.bracket.seriesFifteen.winner, $ctrl.seriesFifteenClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesThirteen.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesFourteen.winner, $ctrl.bracket.seriesFifteen.winner, $ctrl.seriesFifteenClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesFourteen.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesFifteen.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
         <li class="kb-round third-round">
@@ -132,12 +162,15 @@
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesEleven.winner, $ctrl.bracket.seriesFourteen.winner, $ctrl.seriesFourteenClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesEleven.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesTwelve, $ctrl.braclet.seriesTwelve.winner, $ctrl.seriesTwelveClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesTwelve.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesFourteen.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
         <li class="kb-round second-round">
@@ -146,24 +179,30 @@
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesFive.winner, $ctrl.bracket.seriesEleven.winner, $ctrl.seriesElevenClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesFive.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesSixWinner, $ctrl.bracket.seriesEleven.winner, $ctrl.seriesElevenClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesSix.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesEleven.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesTwelveClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesSeven.winner, $ctrl.bracket.seriesTwelve.winner, $ctrl.seriesTwelveClass, $ctrl.topChosen)">{{$ctrl.bracket.seriesSeven.winner}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.bracket.seriesEight.winner, $ctrl.seriesTwelve.winner, $ctrl.seriesTwelveClass, $ctrl.bottomChosen)">{{$ctrl.bracket.seriesEight.winner}}</div>
             </div>
-            <select ng-model="$ctrl.seriesTwelve.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
         <li class="kb-round first-round">
@@ -172,50 +211,63 @@
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.east.one.name, $ctrl.bracket.seriesFive.winner, $ctrl.seriesFiveClass, $ctrl.topChosen)">{{$ctrl.east.one.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.east.eight.name, $ctrl.bracket.seriesFive.winner, $ctrl.seriesFiveClass, $ctrl.bottomChosen)">{{$ctrl.east.eight.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesFive.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesSixClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.east.four.name, $ctrl.bracket.seriesSix.winner, $ctrl.seriesSixClass, $ctrl.topChosen)">{{$ctrl.east.four.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.east.five.name, $ctrl.bracket.seriesSix.winner, $ctrl.seriesSixClass, $ctrl.bottomChosen)">{{$ctrl.east.five.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesSix.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesSevenClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.east.three.name, $ctrl.bracket.seriesSeven.winner, $ctrl.seriesSevenClass, $ctrl.topChosen)">{{$ctrl.east.three.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.east.six.name, $ctrl.bracket.seriesSeven.winner, $ctrl.seriesOneClass, $ctrl.bottomChosen)">{{$ctrl.east.six.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesSeven.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
           <div class="edit-series">
             <div class="edit-teams" ng-class="$ctrl.seriesEightClass">
               <div class="team top" ng-click="$ctrl.chooseWinner($ctrl.east.two.name, $ctrl.bracket.seriesEight.winner, $ctrl.seriesEightClass, $ctrl.topChosen)">{{$ctrl.east.two.name}}</div>
               <div class="team bottom" ng-click="$ctrl.chooseWinner($ctrl.east.seven.name, $ctrl.bracket.seriesEight.winner, $ctrl.seriesEightClass, $ctrl.bottomChosen)">{{$ctrl.east.seven.name}}</div>
             </div>
-            <select ng-model="$ctrl.seriesEight.length">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            <div class="edit-length">
+              <p>in</p>
+              <select ng-model="$ctrl.seriesOne.length">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+            </div>
           </div>
         </li>
       </ul>
+    </div>
   </section>
 </div>

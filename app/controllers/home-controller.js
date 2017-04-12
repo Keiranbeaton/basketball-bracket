@@ -25,7 +25,7 @@ module.exports = function(app) {
         $http.get(this.baseUrl + '/users/' + auth.currentUser.id, this.config)
           .then((res) => {
             this.signedIn = true;
-            this.currentUser = res;
+            this.currentUser = res.data;
           });
       } else {
         this.signedIn = false;

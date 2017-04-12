@@ -1,0 +1,55 @@
+#edit-bracket-view {
+  width: $kb-container-width;
+  section {
+    background-color: $kb-color2;
+    border: thin solid white;
+    width: $kb-inner-container-width;
+    margin: 5%;
+    h3 {
+      width: 100%;
+      text-align: center;
+    }
+    div.edit-bracket-form {
+      width: 90%;
+      padding: 10px;
+      border: thin white solid;
+      background-color: $kb-color3;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    ul {
+      width: 100%;
+      white-space: nowrap;
+      font-size: 0;
+      text-align: center;
+      li.kb-round {
+        display: inline-block;
+        font-size: 12px;
+        width: 14.28%;
+        vertical-align: middle;
+        div.edit-series {
+          width: 100%;
+          display: block;
+          border: thin solid white;
+          text-align: left;
+          vertical-align: middle;
+          div.edit-teams {
+            display: inline-block;
+            width: 30%;
+            margin: 0;
+          }
+          p {
+            display: inline-block;
+            margin: 0% 5%;
+            padding-top: 8px;
+            padding-bottom: 8px;
+          }
+          select {
+            display: inline-block;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
