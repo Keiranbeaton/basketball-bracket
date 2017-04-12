@@ -89,7 +89,9 @@
           white-space: nowrap;
           font-size: 0;
           display: inline-block;
-          width: $kb-container-width;
+          width: 90%;
+          margin-left: 5%;
+          margin-right: 5%;
           p {
             white-space: normal;
             font-size: 12px;
@@ -98,14 +100,10 @@
           }
         }
         li.kb-labels {
-          width: 90%;
-          margin-left: 5%;
-          margin-right: 5%;
           padding-bottom: 5px;
           border-bottom: thin white solid;
         }
       }
     }
   }
-
 }

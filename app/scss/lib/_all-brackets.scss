@@ -1,0 +1,11 @@
+#bracket-view {
+  width: $kb-container-width;
+  min-height: 100%;
+  section {
+    background-color: $kb-color2;
+    border: thin solid white;
+    width: $kb-inner-container-width;
+    margin: 5%;
+    text-align: center;
+  }
+}

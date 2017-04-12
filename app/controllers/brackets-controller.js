@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('BracketController', ['$log', '$http', 'auth', BracketController]);
+  app.controller('BracketsController', ['$log', '$http', 'auth', BracketController]);
 
   function BracketController($log, $http, auth) {
     this.users = [];
@@ -13,9 +13,11 @@ module.exports = function(app) {
       $http.get(this.baseUrl + '/users', this.config)
         .then((res) => {
           this.users = res;
-          this.users.sort(function(a, b) {
-            return b.score - a.score;
-          });
+          if (this.users.length) {
+            this.users.sort(function(a, b) {
+              return b.score - a.score;
+            });
+          }
         });
     };
 

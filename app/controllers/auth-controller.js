@@ -2,9 +2,18 @@
 
 module.exports = function(app) {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', '$log', function($http, $location, $window, auth, $log) {
+    this.wrongPassword = false;
+    this.confirmPassword = true;
 
     this.signup = function(user) {
       $log.debug('AuthController.signup');
+      if (user.password !== user.confirm) {
+        this.confirmPassword = false;
+        return;
+      }
+      if (user.password === user.confirm) {
+        this.confirmPassword = true;
+      }
       $http.post(this.baseUrl + '/signup', user)
         .then((res) => {
           auth.setToken(res.data.token);

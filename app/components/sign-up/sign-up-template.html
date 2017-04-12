@@ -1,3 +1,33 @@
 <div id="sign-up-view">
-
+  <nav class="kb-header">
+    <div class="header-title">
+      <h1>2nd Annual Arian Ghavidel Memorial Bracket Challenge</h1>
+    </div>
+    <ul>
+      <li><a href="#/home"> Home </a></li>
+      <li><a href="#/brackets"> All Brackets </a></li>
+      <li><a href="#/sign-in"> Sign In </a></li>
+      <li><a href="#/sign-out"> Sign Out </a></li>
+    </ul>
+  </nav>
+  <form class="sign-up" ng-submit="$ctrl.signup($ctrl.user)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" ng-model="$ctrl.user.name" placeholder="name" required>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" ng-model="$ctrl.user.username" placeholder="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" ng-model="$ctrl.user.password" placeholder="password" required>
+    </div>
+    <p class="auth-error" ng-hide="$ctrl.confirmPassword">Passwords do not match</p>
+    <div class="form-group">
+      <label for="confirm">Confirm Password</label>
+      <input type="password" name="confirm" ng-model="$ctrl.user.confirm" placeholder="confirm password" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
 </div>

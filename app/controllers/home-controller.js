@@ -15,13 +15,14 @@ module.exports = function(app) {
       $log.debug('HomeController.getUsers');
       $http.get(this.baseUrl + '/users', this.config)
         .then((res) => {
-          this.users = res;
+          this.users = res.data;
         });
     };
+
     this.getCurrentUser = function() {
       $log.debug('HomeController.getCurrentuser');
-      if(auth.currentUser.hasOwnProperty('userId') && auth.currentUser.userId.length > 1) {
-        $http.get(this.baseUrl + '/users/' + auth.currentUser.userId, this.config)
+      if(auth.currentUser.hasOwnProperty('id') && auth.currentUser.id.length > 1) {
+        $http.get(this.baseUrl + '/users/' + auth.currentUser.id, this.config)
           .then((res) => {
             this.signedIn = true;
             this.currentUser = res;
@@ -35,6 +36,8 @@ module.exports = function(app) {
     this.onPageLoad = function() {
       this.getUsers();
       this.getCurrentUser();
+      $log.log('auth.currentUser.id', auth.currentUser.id);
+      $log.log('auth.currentUser.username', auth.currentUser.username);
     };
 
   }
