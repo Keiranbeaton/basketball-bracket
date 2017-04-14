@@ -30,3 +30,23 @@ div.kb-line {
   border-top: thin $kb-color-bright solid;
   margin-bottom: 20px;
 }
+
+main.whole-page {
+  display: none;
+}
+main.phone-size {
+  display: block;
+  padding: 10px;
+  h2 {
+    margin: 30% auto;
+  }
+}
+
+@media (min-width: 768px) {
+  main.whole-page {
+    display: block;
+  }
+  main.phone-size {
+    display: none;
+  }
+}
