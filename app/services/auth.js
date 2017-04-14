@@ -21,11 +21,12 @@ module.exports = function(app) {
         if (!token) return;
         let decoded = jwt.decodeToken(token);
         this.currentUser.username = decoded.username;
+        this.currentUser.id = decoded.userId;
         return this.currentUser;
       },
       signOut: function() {
         $window.localStorage.token = '';
-        this.currentUser = '';
+        this.currentUser = {};
         this.token = '';
         $location.path('/home');
       }

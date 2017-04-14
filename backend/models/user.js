@@ -20,7 +20,7 @@ userSchema.methods.generateHash = function(password) {
     bcrypt.hash(password, 8, (err, data) => {
       if (err) return reject(err);
       this.password = data;
-      resolve({token: jwt.sign({idd: this.username}, process.env.APP_SECRET)});
+      resolve({token: jwt.sign({username: this.username, userId: this._id}, process.env.APP_SECRET)});
     });
   });
 };
@@ -30,7 +30,7 @@ userSchema.methods.comparePassword = function(password) {
     bcrypt.compare(password, this.password, (err, data) => {
       if (err) return reject(err);
       if (data === false) return reject(new Error('Password did not match'));
-      resolve({token: jwt.sign({idd: this.username}, process.env.APP_SECRET)});
+      resolve({token: jwt.sign({username: this.username, userId: this._id}, process.env.APP_SECRET)});
     });
   });
 };

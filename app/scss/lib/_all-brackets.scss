@@ -1,0 +1,105 @@
+#bracket-view {
+  width: $kb-container-width;
+  section {
+    background-color: $kb-color-dark;
+    border: thin solid $kb-color-medium;
+    width: $kb-inner-container-width;
+    margin: $kb-gutter;
+    h3 {
+      width: 100%;
+      text-align: center;
+      color: $kb-color-medium;
+    }
+    div.single-bracket {
+      width: 90%;
+      padding: 10px;
+      border: thin $kb-color-light solid;
+      background-color: $kb-color-medium;
+      margin-left: 5%;
+      margin-right: 5%;
+      h3 {
+        width: 100%;
+        text-align: center;
+        color: white;
+      }
+      ul {
+        width: 100%;
+        white-space: nowrap;
+        font-size: 0;
+        text-align: center;
+        li.kb-round {
+          display: inline-block;
+          font-size: 12px;
+          width: 14.28%;
+          vertical-align: middle;
+          article.kb-series {
+            padding: 10px;
+            display: block;
+            background-color: $kb-color-light;
+            border: thin solid $kb-color-bright;
+            vertical-align: middle;
+            div.team {
+              display: block;
+              width: 100%;
+              margin: 0;
+              vertical-align: middle;
+              margin: 5%;
+              min-height: 14px;
+              p {
+                display: inline-block;
+                color: black;
+              }
+              .winner {
+                width: 60%;
+                background-color: green;
+                border: thin $kb-color-bright solid;
+                color: white;
+              }
+              .loser {
+                width: 60%;
+                background-color: white;
+                border: thin $kb-color-bright solid;
+                color: $kb-color-light;
+              }
+            }
+            div.edit-length {
+              display: inline-block;
+              width: 40%;
+              vertical-align: middle;
+            }
+            p {
+              display: inline-block;
+              margin:0;
+            }
+            input {
+              width: 50%;
+            }
+          }
+          div.champ-box {
+            min-height: 40px;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            h2 {
+              min-height: 20px;
+              margin: 0;
+              width: 100%;
+              text-align: center;
+            }
+          }
+          div.point-box {
+            min-height: 40px;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            h2 {
+              width: 100%;
+              text-align: center;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,8 +13,10 @@ let bracketRouter = module.exports = exports = new Router();
 bracketRouter.post('/', jsonParser, (req, res, next) => {
   debug('POST /api/brackets');
   let data = req.body;
+  console.log('req.body', req.body);
   User.findById(data.userId)
     .then((user) => {
+      console.log('user', user);
       user.addBracket(req.body)
         .then((bracket) => {
           res.json(bracket);

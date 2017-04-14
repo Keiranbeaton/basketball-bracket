@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = (app) => {
-  app.component('kbSignup', {
+  app.component('kbSignUp', {
     controller: 'AuthController',
-    template: require('./signupTemplate.html'),
+    template: require('./sign-up-template.html'),
     bindings: {
       baseUrl: '<',
       config: '<'

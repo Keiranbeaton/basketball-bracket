@@ -1,0 +1,104 @@
+#edit-bracket-view {
+  width: $kb-container-width;
+  .saved-message {
+    min-height: 20px;
+    .success {
+      color: green;
+    }
+    .failure {
+      color: red;
+    }
+  }
+  section {
+    background-color: $kb-color-dark;
+    border: thin solid $kb-color-medium;
+    width: $kb-inner-container-width;
+    margin: $kb-gutter;
+    h3 {
+      width: 100%;
+      text-align: center;
+    }
+    form.edit-bracket-form {
+      min-width: $kb-inner-container-width;
+      border: thin $kb-color-light solid;
+      background-color: $kb-color-medium;
+      margin-left: $kb-gutter;
+      margin-right: $kb-gutter;
+      padding-bottom: 10px;
+      h3 {
+        width: 100%;
+        text-align: center;
+      }
+      ul {
+        width: 100%;
+        white-space: nowrap;
+        font-size: 0;
+        text-align: center;
+        li.kb-round {
+          display: inline-block;
+          font-size: 12px;
+          width: 13.5%;
+          vertical-align: middle;
+          div.edit-series {
+            padding: 10px;
+            display: block;
+            background-color: $kb-color-light;
+            border: thin solid $kb-color-bright;
+            vertical-align: middle;
+            div.edit-teams {
+              display: inline-block;
+              width: 55%;
+              margin: 0;
+              vertical-align: middle;
+              div.team {
+                background-color: $kb-color-medium;
+                border: thin $kb-color-bright solid;
+                margin: 5%;
+                min-height: 14px;
+                text-align: center;
+                cursor: pointer;
+              }
+            }
+            div.edit-length {
+              display: inline-block;
+              width: 45%;
+              vertical-align: middle;
+            }
+            p {
+              display: inline-block;
+              margin:0;
+            }
+            input {
+              width: 50%;
+            }
+          }
+          div.champ-box {
+            min-height: 40px;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            h2 {
+              min-height: 20px;
+              margin: 0;
+              width: 100%;
+              text-align: center;
+            }
+          }
+          div.submit-box {
+            min-height: 40px;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            button {
+              background-color: #717171;
+              color: white;
+              border: thin $kb-color-bright solid;
+              border-radius: 3px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

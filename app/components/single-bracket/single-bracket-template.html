@@ -1,0 +1,52 @@
+<div class="single-bracket" ng-init="$ctrl.postInfo()">
+  <h3>{{$ctrl.user.name}}'s Bracket</h3>
+  <ul class="bracket-header">
+    <li class="kb-round"> First Round </li>
+    <li class="kb-round"> Conference Semis </li>
+    <li class="kb-round"> Conference Finals </li>
+    <li class="kb-round"> Finals </li>
+    <li class="kb-round"> Conference Finals </li>
+    <li class="kb-round"> Conference Semis </li>
+    <li class="kb-round"> First Round </li>
+  </ul>
+  <div class="kb-line"></div>
+  <ul>
+    <li class="kb-round first-round">
+      <kb-series team-one="$ctrl.west.one.name" team-two="$ctrl.west.eight.name" length="$ctrl.user.bracket.seriesOne.length" winner="$ctrl.user.bracket.seriesOne.winner"></kb-series>
+      <kb-series team-one="$ctrl.west.four.name" team-two="$ctrl.west.five.name" length="$ctrl.user.bracket.seriesTwo.length" winner="$ctrl.user.bracket.seriesTwo.winner"></kb-series>
+      <kb-series team-one="$ctrl.west.three.name" team-two="$ctrl.west.six.name" length="$ctrl.user.bracket.seriesThree.length" winner="$ctrl.user.bracket.seriesThree.winner"></kb-series>
+      <kb-series team-one="$ctrl.west.two.name" team-two="$ctrl.west.seven.name" length="$ctrl.user.bracket.seriesFour.length" winner="$ctrl.user.bracket.seriesFour.winner"></kb-series>
+    </li>
+    <li class="kb-round second-round">
+      <kb-series team-one="$ctrl.user.bracket.seriesOne.winner" team-two="$ctrl.user.bracket.seriesTwo.winner" length="$ctrl.user.bracket.seriesNine.length" winner="$ctrl.user.bracket.seriesNine.winner"></kb-series>
+      <kb-series team-one="$ctrl.user.bracket.seriesThree.winner" team-two="$ctrl.user.bracket.seriesFour.winner" length="$ctrl.user.bracket.seriesTen.length" winner="$ctrl.user.bracket.seriesTen.winner"></kb-series>
+    </li>
+    <li class="kb-round third-round">
+      <kb-series team-one="$ctrl.user.bracket.seriesNine.winner" team-two="$ctrl.user.bracket.seriesTen.winner" length="$ctrl.user.bracket.seriesThirteen.length" winner="$ctrl.user.bracket.seriesThirteen.winner"></kb-series>
+    </li>
+    <li class="kb-round fourth-round">
+      <div class="champ-box">
+        <h2> Champion: </h2>
+        <h2> {{$ctrl.user.bracket.seriesFifteen.winner}} </h2>
+      </div>
+      <kb-series team-one="$ctrl.user.bracket.seriesThirteen.winner" team-two="$ctrl.user.bracket.seriesFourteen.winner" length="$ctrl.user.bracket.seriesFifteen.length" winner="$ctrl.user.bracket.seriesFifteen.winner"></kb-series>
+      <div class="point-box">
+        <h2>Score:</h2>
+        <h2>{{$ctrl.user.score}}</h2>
+      </div>
+    </li>
+    <li class="kb-round third-round">
+      <kb-series team-one="$ctrl.user.bracket.seriesEleven.winner" team-two="$ctrl.user.bracket.seriesTwelve.winner" length="$ctrl.user.bracket.seriesFourteen.length" winner="$ctrl.user.bracket.seriesFourteen.winner"></kb-series>
+    </li>
+    <li class="kb-round second-round">
+      <kb-series team-one="$ctrl.user.bracket.seriesFive.winner" team-two="$ctrl.user.bracket.seriesSix.winner" length="$ctrl.user.bracket.seriesEleven.length" winner="$ctrl.user.bracket.seriesEleven.winner"></kb-series>
+      <kb-series team-one="$ctrl.user.bracket.seriesSeven.winner" team-two="$ctrl.user.bracket.seriesEight.winner" length="$ctrl.user.bracket.seriesTwelve.length" winner="$ctrl.user.bracket.seriesTwelve.winner"></kb-series>
+    </li>
+    <li class="kb-round first-round">
+      <kb-series team-one="$ctrl.east.one.name" team-two="$ctrl.east.eight.name" length="$ctrl.user.bracket.seriesFive.length" winner="$ctrl.user.bracket.seriesFive.winner"></kb-series>
+      <kb-series team-one="$ctrl.east.four.name" team-two="$ctrl.east.five.name" length="$ctrl.user.bracket.seriesSix.length" winner="$ctrl.user.bracket.seriesSix.winner"></kb-series>
+      <kb-series team-one="$ctrl.east.three.name" team-two="$ctrl.east.six.name" length="$ctrl.user.bracket.seriesSeven.length" winner="$ctrl.user.bracket.seriesSeven.winner"></kb-series>
+      <kb-series team-one="$ctrl.east.two.name" team-two="$ctrl.east.seven.name" length="$ctrl.user.bracket.seriesEight.length" winner="$ctrl.user.bracket.seriesEight.winner"></kb-series>
+    </li>
+  </ul>
+</div>

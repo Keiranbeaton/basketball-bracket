@@ -4,7 +4,10 @@
   "description": "Creating a site so my friends and I can do a bracket challenge for the nba playoffs",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./backend/test/test-harness.js"
+    "test": "mocha ./backend/test/test-harness.js",
+    "watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "heroku-postbuild": "./node_modules/webpack/bin/webpack.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

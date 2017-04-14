@@ -34,7 +34,6 @@ authRouter.get('/signin', BasicHTTP, (req, res, next) => {
       if (!user) return next(createError(404, 'User not found'));
       user.comparePassword(req.auth.password)
         .then((tokenData) => {
-          tokenData.userId = user._id;
           res.json(tokenData);
         }, ErrorHandler(401, next, 'Authentication Failed'));
     }, ErrorHandler(401, next, 'Authentication Failed'));
