@@ -1,7 +1,14 @@
 #edit-bracket-view {
   width: $kb-container-width;
-  .saved-message {
+  .save-message {
     min-height: 20px;
+    width: 100%;
+    text-align: center;
+    h4 {
+      width: 30%;
+      margin: 0 35%;
+      background-color: $kb-color-dark;
+    }
     .success {
       color: green;
     }
