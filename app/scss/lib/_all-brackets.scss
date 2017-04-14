@@ -47,7 +47,7 @@
               min-height: 14px;
               p {
                 display: inline-block;
-                color: black;
+                color: $kb-color-dark;
               }
               .winner {
                 width: 60%;
@@ -62,17 +62,9 @@
                 color: $kb-color-light;
               }
             }
-            div.edit-length {
-              display: inline-block;
-              width: 40%;
-              vertical-align: middle;
-            }
             p {
               display: inline-block;
               margin:0;
-            }
-            input {
-              width: 50%;
             }
           }
           div.champ-box {
