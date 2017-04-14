@@ -5,6 +5,7 @@ module.exports = function(app) {
 
   function BracketController($log, $http, $rs, auth) {
     this.users = [];
+    this.filledOutUsers = [];
     this.currentUser = {};
     this.signedIn = false;
 
@@ -111,6 +112,7 @@ module.exports = function(app) {
                   }
                 }
                 user.score = newScore;
+                this.filledOutUsers.push(user);
               } else {
                 user.score = 0;
               }

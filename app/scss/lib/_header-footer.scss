@@ -1,6 +1,7 @@
 .kb-header {
-  background-color: $kb-color2;
-  border-bottom: thin solid white;
+  background-color: $kb-color-medium;
+  color: $kb-text1;
+  border-bottom: thin solid $kb-color-dark;
   padding-top: 10px;
   padding-bottom: 10px;
   div.header-title {
@@ -28,15 +29,16 @@
         text-align: center;
       }
       a:hover {
-        color: $kb-text2;
+        color: $kb-color-light;
       }
     }
   }
 }
 
-.kb-footer {
-  height: 50px;
-  width: $kb-container-width;
-  background-color: $kb-color2;
-  border-top: thin white solid;
-}
+// .kb-footer {
+//   position: absolute;
+//   height: 50px;
+//   width: $kb-container-width;
+//   background-color: $kb-color-dark;
+//   border-top: thin white solid;
+// }

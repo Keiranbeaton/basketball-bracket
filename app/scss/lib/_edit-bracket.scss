@@ -2,7 +2,7 @@
   width: $kb-container-width;
   .saved-message {
     min-height: 20px;
-    .sucess {
+    .success {
       color: green;
     }
     .failure {
@@ -10,21 +10,21 @@
     }
   }
   section {
-    background-color: $kb-color2;
-    border: thin solid white;
+    background-color: $kb-color-dark;
+    border: thin solid $kb-color-medium;
     width: $kb-inner-container-width;
-    margin: 5%;
+    margin: $kb-gutter;
     h3 {
       width: 100%;
       text-align: center;
     }
     form.edit-bracket-form {
-      width: 90%;
-      padding: 10px;
-      border: thin white solid;
-      background-color: $kb-color3;
-      margin-left: 5%;
-      margin-right: 5%;
+      min-width: $kb-inner-container-width;
+      border: thin $kb-color-light solid;
+      background-color: $kb-color-medium;
+      margin-left: $kb-gutter;
+      margin-right: $kb-gutter;
+      padding-bottom: 10px;
       h3 {
         width: 100%;
         text-align: center;
@@ -37,21 +37,22 @@
         li.kb-round {
           display: inline-block;
           font-size: 12px;
-          width: 14.28%;
+          width: 13.5%;
           vertical-align: middle;
           div.edit-series {
             padding: 10px;
             display: block;
-            border: thin solid white;
+            background-color: $kb-color-light;
+            border: thin solid $kb-color-bright;
             vertical-align: middle;
             div.edit-teams {
               display: inline-block;
-              width: 60%;
+              width: 55%;
               margin: 0;
               vertical-align: middle;
               div.team {
-                background-color: $kb-color1;
-                border: thin white solid;
+                background-color: $kb-color-medium;
+                border: thin $kb-color-bright solid;
                 margin: 5%;
                 min-height: 14px;
                 text-align: center;
@@ -60,7 +61,7 @@
             }
             div.edit-length {
               display: inline-block;
-              width: 40%;
+              width: 45%;
               vertical-align: middle;
             }
             p {
@@ -91,7 +92,7 @@
             button {
               background-color: #717171;
               color: white;
-              border: thin white solid;
+              border: thin $kb-color-bright solid;
               border-radius: 3px;
               cursor: pointer;
             }
