@@ -7,21 +7,21 @@ module.exports = (app) => {
     this.baseUrl = $rs.baseUrl;
     this.config = $rs.httpConfig;
     this.bracket = {
-      seriesOne: {id: 1, length: 0, winner: ''},
-      seriesTwo: {id: 2, length: 0, winner: ''},
-      seriesThree: {id: 3, length: 0, winner: ''},
-      seriesFour: {id: 4, length: 0, winner: ''},
-      seriesFive: {id: 5, length: 0, winner: ''},
-      seriesSix: {id: 6, length: 0, winner: ''},
-      seriesSeven: {id: 7, length: 0, winner: ''},
-      seriesEight: {id: 8, length: 0, winner: ''},
-      seriesNine: {id: 9, length: 0, winner: ''},
-      seriesTen: {id: 10, length: 0, winner: ''},
-      seriesEleven: {id: 11, length: 0, winner: ''},
-      seriesTwelve: {id: 12, length: 0, winner: ''},
-      seriesThirteen: {id: 13, length: 0, winner: ''},
-      seriesFourteen: {id: 14, length: 0, winner: ''},
-      seriesFifteen: {id: 15, length: 0, winner: ''},
+      seriesOne: {id: 1, length: 4, winner: 'tbd'},
+      seriesTwo: {id: 2, length: 4, winner: 'tbd'},
+      seriesThree: {id: 3, length: 4, winner: 'tbd'},
+      seriesFour: {id: 4, length: 4, winner: 'tbd'},
+      seriesFive: {id: 5, length: 4, winner: 'tbd'},
+      seriesSix: {id: 6, length: 4, winner: 'tbd'},
+      seriesSeven: {id: 7, length: 4, winner: 'tbd'},
+      seriesEight: {id: 8, length: 4, winner: 'tbd'},
+      seriesNine: {id: 9, length: 4, winner: 'tbd'},
+      seriesTen: {id: 10, length: 4, winner: 'tbd'},
+      seriesEleven: {id: 11, length: 4, winner: 'tbd'},
+      seriesTwelve: {id: 12, length: 4, winner: 'tbd'},
+      seriesThirteen: {id: 13, length: 4, winner: 'tbd'},
+      seriesFourteen: {id: 14, length: 4, winner: 'tbd'},
+      seriesFifteen: {id: 15, length: 4, winner: 'tbd'},
     };
     this.seriesOneClass = '';
     this.seriesTwoClass = '';
@@ -46,15 +46,21 @@ module.exports = (app) => {
     this.east = $rs.teams.east;
     this.west = $rs.teams.west;
     this.currentUser = {};
+    this.lengthOptions = [{value:4, label: 'Four'}, {value:5, label: 'Five'}, {value:6, label: 'Six'}, {value:7, label:'Seven'}];
+
+    this.submitBracket;
 
     this.getCurrentUser = function() {
       $log.debug('EditBracketController.getCurrentuser');
-      if(auth.currentUser.hasOwnProperty('userId') && auth.currenUser.userId.length > 1) {
-        $http.get(this.baseUrl + '/users/' + auth.currentUser.userId, this.config)
+      if(auth.currentUser.hasOwnProperty('id') && auth.currentUser.id.length > 1) {
+        $http.get(this.baseUrl + '/users/' + auth.currentUser.id, this.config)
           .then((res) => {
             this.signedIn = true;
-            this.currentUser = res;
+            this.currentUser = res.data;
+            $log.log('res', res);
             this.checkBracket();
+          }, (err) => {
+            $log.log('error in getCurrentUser', err);
           });
       } else {
         this.signedIn = false;
@@ -66,6 +72,13 @@ module.exports = (app) => {
       if (this.currentUser.bracket) {
         this.bracket = this.currentUser.bracket;
         this.hasBracket = true;
+        this.submitBracket = this.putBracket;
+        $log.log('submitBracket should === putBracket', this.submitBracket, this.putBracket);
+      }
+      if (!this.currentUser.bracket) {
+        this.hasBracket = false;
+        this.submitBracket = this.postBracket;
+        $log.log('submitBracket should === postBracket', this.submitBracket, this.postBracket);
       }
     };
 
@@ -74,16 +87,9 @@ module.exports = (app) => {
       this.getCurrentUser();
     };
 
-    this.chooseWinner = function(winner, dest, divClass, topOrBottom) {
-      $log.debug('EditBracketController.chooseWinner');
-      $log.log('winner, dest', winner, dest);
-      dest = winner;
-      $log.log('divClass, topOrBottom', divClass, topOrBottom);
-      divClass = topOrBottom;
-    };
-
     this.postBracket = function() {
       $log.debug('EditBracketController.postBracket');
+      this.bracket.userId = this.currentUser._id;
       $http.post(this.baseUrl + '/brackets', this.bracket, this.config)
         .then((res) => {
           $log.debug('Successfully saved bracket');
@@ -96,7 +102,7 @@ module.exports = (app) => {
           $log.debug('error message', err);
           this.hasBracket = false;
           this.failedMessage = true;
-          this.successMessage = true;
+          this.successMessage = false;
         });
     };
 

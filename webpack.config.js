@@ -70,6 +70,10 @@ module.exports = {
       {
         test: /\.eot/,
         loader: 'url-loader?limit=10000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]'
+      },
+      {
+        test: /\.mp3/,
+        loader: 'file-loader'
       }
     ]
   }

@@ -1,5 +1,14 @@
 #edit-bracket-view {
   width: $kb-container-width;
+  .saved-message {
+    min-height: 20px;
+    .sucess {
+      color: green;
+    }
+    .failure {
+      color: red;
+    }
+  }
   section {
     background-color: $kb-color2;
     border: thin solid white;
@@ -9,44 +18,83 @@
       width: 100%;
       text-align: center;
     }
-    div.edit-bracket-form {
+    form.edit-bracket-form {
       width: 90%;
       padding: 10px;
       border: thin white solid;
       background-color: $kb-color3;
       margin-left: 5%;
       margin-right: 5%;
-    }
-    ul {
-      width: 100%;
-      white-space: nowrap;
-      font-size: 0;
-      text-align: center;
-      li.kb-round {
-        display: inline-block;
-        font-size: 12px;
-        width: 14.28%;
-        vertical-align: middle;
-        div.edit-series {
-          width: 100%;
-          display: block;
-          border: thin solid white;
-          text-align: left;
+      h3 {
+        width: 100%;
+        text-align: center;
+      }
+      ul {
+        width: 100%;
+        white-space: nowrap;
+        font-size: 0;
+        text-align: center;
+        li.kb-round {
+          display: inline-block;
+          font-size: 12px;
+          width: 14.28%;
           vertical-align: middle;
-          div.edit-teams {
-            display: inline-block;
-            width: 30%;
-            margin: 0;
+          div.edit-series {
+            padding: 10px;
+            display: block;
+            border: thin solid white;
+            vertical-align: middle;
+            div.edit-teams {
+              display: inline-block;
+              width: 60%;
+              margin: 0;
+              vertical-align: middle;
+              div.team {
+                background-color: $kb-color1;
+                border: thin white solid;
+                margin: 5%;
+                min-height: 14px;
+                text-align: center;
+                cursor: pointer;
+              }
+            }
+            div.edit-length {
+              display: inline-block;
+              width: 40%;
+              vertical-align: middle;
+            }
+            p {
+              display: inline-block;
+              margin:0;
+            }
+            input {
+              width: 50%;
+            }
           }
-          p {
-            display: inline-block;
-            margin: 0% 5%;
-            padding-top: 8px;
-            padding-bottom: 8px;
-          }
-          select {
-            display: inline-block;
+          div.champ-box {
+            min-height: 40px;
             margin: 0;
+            width: 100%;
+            text-align: center;
+            h2 {
+              min-height: 20px;
+              margin: 0;
+              width: 100%;
+              text-align: center;
+            }
+          }
+          div.submit-box {
+            min-height: 40px;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            button {
+              background-color: #717171;
+              color: white;
+              border: thin white solid;
+              border-radius: 3px;
+              cursor: pointer;
+            }
           }
         }
       }

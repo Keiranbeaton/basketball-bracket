@@ -10,21 +10,21 @@ const bracketApp = angular.module('bracketApp', [angularRoute, angularJwt]);
 
 bracketApp.run(['$rootScope', ($rs) => {
   $rs.master = {
-    one: {winner: 'TBD', length: 'NA'},
-    two: {winner: 'TBD', length: 'NA'},
-    three: {winner: 'TBD', length: 'NA'},
-    four: {winner: 'TBD', length: 'NA'},
-    five: {winner: 'TBD', length: 'NA'},
-    six: {winner: 'TBD', length: 'NA'},
-    seven: {winner: 'TBD', length: 'NA'},
-    eight: {winner: 'TBD', length: 'NA'},
-    nine: {winner: 'TBD', length: 'NA'},
-    ten: {winner: 'TBD', length: 'NA'},
-    eleven: {winner: 'TBD', length: 'NA'},
-    twelve: {winner: 'TBD', length: 'NA'},
-    thirteen: {winner: 'TBD', length: 'NA'},
-    fourteen: {winner: 'TBD', length: 'NA'},
-    fifteen: {winner: 'TBD', length: 'NA'}
+    one: {winner: 'NA', length: 'NA'},
+    two: {winner: 'NA', length: 'NA'},
+    three: {winner: 'NA', length: 'NA'},
+    four: {winner: 'NA', length: 'NA'},
+    five: {winner: 'NA', length: 'NA'},
+    six: {winner: 'NA', length: 'NA'},
+    seven: {winner: 'NA', length: 'NA'},
+    eight: {winner: 'NA', length: 'NA'},
+    nine: {winner: 'NA', length: 'NA'},
+    ten: {winner: 'NA', length: 'NA'},
+    eleven: {winner: 'NA', length: 'NA'},
+    twelve: {winner: 'NA', length: 'NA'},
+    thirteen: {winner: 'NA', length: 'NA'},
+    fourteen: {winner: 'NA', length: 'NA'},
+    fifteen: {winner: 'NA', length: 'NA'}
   };
   $rs.teams = {
     east: {
