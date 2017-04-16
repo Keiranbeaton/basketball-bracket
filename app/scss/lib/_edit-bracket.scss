@@ -65,6 +65,22 @@
                 text-align: center;
                 cursor: pointer;
               }
+              .top-chosen {
+                .top {
+                  border: medium green solid;
+                }
+                .bottom {
+                  border: thin $kb-color-bright solid;
+                }
+              }
+              .bottom-chosen {
+                .bottom {
+                  border: medium green solid;
+                }
+                .top {
+                  border: thin $kb-color-bright solid;
+                }
+              }
             }
             div.edit-length {
               display: inline-block;
