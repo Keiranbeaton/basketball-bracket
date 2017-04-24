@@ -117,9 +117,6 @@ module.exports = function(app) {
                 user.score = 0;
               }
             });
-            this.users.sort(function(a, b) {
-              return b.score - a.score;
-            });
           }
         });
     };

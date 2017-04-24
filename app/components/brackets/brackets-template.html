@@ -15,7 +15,7 @@
   <section>
     <h3>Brackets</h3>
     <ul>
-      <li ng-repeat="user in $ctrl.filledOutUsers">
+      <li ng-repeat="user in $ctrl.filledOutUsers | orderBy:'-score'">
         <kb-single-bracket user="user"></kb-single-bracket>
       </li>
     </ul>
