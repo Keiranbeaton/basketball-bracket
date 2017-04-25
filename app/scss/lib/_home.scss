@@ -1,5 +1,8 @@
 #home-view {
   width: $kb-container-width;
+  .winning-number {
+    font-weight: bold;
+  }
   section {
     background-color: $kb-color-dark;
     border: thin solid $kb-color-bright;
