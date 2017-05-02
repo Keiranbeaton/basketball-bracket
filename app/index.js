@@ -11,7 +11,7 @@ const bracketApp = angular.module('bracketApp', [angularRoute, angularJwt]);
 bracketApp.run(['$rootScope', ($rs) => {
   $rs.master = {
     one: {winner: 'GSW', length: 4},
-    two: {winner: 'NA', length: 'NA'},
+    two: {winner: 'UTA', length: 7},
     three: {winner: 'HOU', length: 5},
     four: {winner: 'SAS', length: 6},
     five: {winner: 'BOS', length: 6},
