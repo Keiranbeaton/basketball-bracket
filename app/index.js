@@ -20,7 +20,7 @@ bracketApp.run(['$rootScope', ($rs) => {
     eight: {winner: 'CLE', length: 4},
     nine: {winner: 'GSW', length: 4},
     ten: {winner: 'SAS', length: 6},
-    eleven: {winner: 'NA', length: 'NA'},
+    eleven: {winner: 'BOS', length: 7},
     twelve: {winner: 'CLE', length: 4},
     thirteen: {winner: 'NA', length: 'NA'},
     fourteen: {winner: 'NA', length: 'NA'},
